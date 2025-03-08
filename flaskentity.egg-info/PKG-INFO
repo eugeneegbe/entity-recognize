@@ -1,0 +1,19 @@
+Metadata-Version: 2.2
+Name: flaskentity
+Version: 0.0.1
+Summary: An application to recognize entities from text
+Home-page: https://github.com/eugeneegbe/entity-recognize
+Author: Egbe Eugene
+Author-email: agboreugene@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: flask
+Requires-Dist: spacy
+Requires-Dist: pytest
+Requires-Dist: selenium
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary

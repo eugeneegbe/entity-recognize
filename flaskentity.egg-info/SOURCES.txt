@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+flaskentity.egg-info/PKG-INFO
+flaskentity.egg-info/SOURCES.txt
+flaskentity.egg-info/dependency_links.txt
+flaskentity.egg-info/requires.txt
+flaskentity.egg-info/top_level.txt

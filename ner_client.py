@@ -14,7 +14,11 @@ class NamedEntityCLient:
     @staticmethod
     def map_label(self, label):
         label_map = {
-            'PERSON': 'Person'
+            'PERSON': 'Person',
+            'LOCATION': 'Location',
+            'GROUP': 'Group',
+            'GPE': 'Location',
+            'LANGUAGE': 'Language'
         }
 
         return label_map.get(label)

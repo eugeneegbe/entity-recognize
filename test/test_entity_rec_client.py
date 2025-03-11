@@ -29,3 +29,34 @@ class TestEntityRecClient(unittest.TestCase):
         ents = ner.get_ents('...')
         expected_resutl = { "ents": [{'ent': 'Eugene', 'label': 'Person'}] , "html": ''}
         self.assertListEqual(ents["ents"], expected_resutl["ents"])
+
+
+    def test_get_ents_given_spacy_LOCATION_is_resturned_serialized_to_Location(self):
+        model = NerModelTestDouble('eng')
+        doc_ents = [{'text': 'Yaounde', 'label_': 'LOCATION'}]
+        model.returns_doc_ents(doc_ents)
+        ner = NamedEntityCLient(model)
+        ents = ner.get_ents('...')
+        expected_resutl = { "ents": [{'ent': 'Yaounde', 'label': 'Location'}] , "html": ''}
+        self.assertListEqual(ents["ents"], expected_resutl["ents"])
+
+
+    def test_get_ents_given_spacy_GROUP_is_resturned_serialized_to_GROUP(self):
+        model = NerModelTestDouble('eng')
+        doc_ents = [{'text': 'Wikimedia', 'label_': 'GROUP'}]
+        model.returns_doc_ents(doc_ents)
+        ner = NamedEntityCLient(model)
+        ents = ner.get_ents('...')
+        expected_resutl = { "ents": [{'ent': 'Wikimedia', 'label': 'Group'}] , "html": ''}
+        self.assertListEqual(ents["ents"], expected_resutl["ents"])
+
+
+
+    def test_get_ents_given_spacy_LANGUAGE_is_resturned_serialized_to_Language(self):
+        model = NerModelTestDouble('eng')
+        doc_ents = [{'text': 'English', 'label_': 'LANGUAGE'}]
+        model.returns_doc_ents(doc_ents)
+        ner = NamedEntityCLient(model)
+        ents = ner.get_ents('...')
+        expected_resutl = { "ents": [{'ent': 'English', 'label': 'Language'}] , "html": ''}
+        self.assertListEqual(ents["ents"], expected_resutl["ents"])

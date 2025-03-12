@@ -1,5 +1,5 @@
 import unittest
-from ner_client import NamedEntityCLient
+from nerclient.ner_client import NamedEntityCLient
 from test_doubles import NerModelTestDouble
 
 
@@ -87,5 +87,9 @@ class TestEntityRecClient(unittest.TestCase):
                     'ent'   : 'United Kingdom',
                     'label' : 'Location'
                 }
-            ] , "html": ''}
+            ] ,
+            
+            "html": ''
+        }
+        
         self.assertListEqual(ents["ents"], expected_resutl["ents"])

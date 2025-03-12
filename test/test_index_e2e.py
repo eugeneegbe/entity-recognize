@@ -1,10 +1,11 @@
 import unittest
 from selenium import webdriver
 
+
 class E2ETests(unittest.TestCase):
     
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.get('http://localhost:5000')
     
 
@@ -13,4 +14,4 @@ class E2ETests(unittest.TestCase):
     
 
     def test_browser_title_contains_app_name(self):
-        self.assertIn('Named Entity', self.driver.title)
+        self.assertIn('Named Entities', self.driver.title)

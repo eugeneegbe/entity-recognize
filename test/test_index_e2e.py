@@ -18,10 +18,27 @@ class E2ETests(unittest.TestCase):
 
 
     def test_page_heading_is_text_entity_finder(self):
-        heading = self._find('data-test-heading')
+        heading = self._find('data-test-heading').text
         self.assertEqual(heading, "Text Entities Finder")
 
-    
+    def test_input_element_is_not_empty(self):
+        input_element = self._find('data-test-input')
+        self.assertIsNotNone(input_element)
+
+
+    def test_page_has_submit_button_for_submitting_text(self):
+        submit_button = self._find('data-test-submit')
+        self.assertIsNotNone(submit_button)
+
+
+    def test_ter_table_table_exists(self):
+        input_element = self._find('data-test-input')
+        submit_button = self._find('data-test-submit')
+        input_element.send_keys('Eugene is in Cameroon')
+        table = self._find('data-test-ner-table')
+        self.assertIsNotNone(table)
+
+
     def _find(self, name):
-        return self.driver.find_element(By.NAME, name).text
+        return self.driver.find_element(By.NAME, name)
         
